@@ -6,7 +6,12 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+/**bodyParser.json(options)
+ * Parses the text as JSON and exposes the resulting object on req.body.
+ */
 app.use(bodyParser.json());
+
+
 app.get('/signup',(req,res)=>{
     fs.readFile('signup.html',(err,data)=>{
         res.write(data)
